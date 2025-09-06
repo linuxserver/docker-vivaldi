@@ -28,7 +28,6 @@ RUN \
     "https://repo.vivaldi.com/archive/deb/pool/main/vivaldi-stable_${VIVALDI_VERSION}_amd64.deb" && \
   apt-get install -y \
     /tmp/vivaldi.deb && \
-  /opt/vivaldi/update-ffmpeg && \
   echo "**** cleanup ****" && \
   apt-get autoclean && \
   rm -rf \
