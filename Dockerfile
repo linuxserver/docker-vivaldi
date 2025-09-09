@@ -1,0 +1,47 @@
+# syntax=docker/dockerfile:1
+
+FROM ghcr.io/linuxserver/baseimage-selkies:debiantrixie
+
+# set version label
+ARG BUILD_DATE
+ARG VIVALDI_VERSION
+ARG VERSION
+LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+LABEL maintainer="thelamer"
+
+# title
+ENV TITLE=Vivaldi
+
+RUN \
+  echo "**** add icon ****" && \
+  curl -o \
+    /usr/share/selkies/www/icon.png \
+    https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/vivaldi-logo.png && \
+  echo "**** install packages ****" && \
+  apt-get update && \
+  apt-get install -y \
+    xz-utils && \
+  if [ -z ${VIVALDI_VERSION+x} ]; then \
+    VIVALDI_VERSION=$(curl -s -L https://repo.vivaldi.com/archive/deb/dists/stable/main/binary-amd64/Packages \
+    |grep -A 7 -m 1 'Package: vivaldi-stable' | awk -F ': ' '/Version/{print $2;exit}'); \
+  fi && \
+  curl -o \
+    /tmp/vivaldi.deb -L \
+    "https://repo.vivaldi.com/archive/deb/pool/main/vivaldi-stable_${VIVALDI_VERSION}_amd64.deb" && \
+  apt-get install -y \
+    /tmp/vivaldi.deb && \
+  echo "**** cleanup ****" && \
+  apt-get autoclean && \
+  rm -rf \
+    /config/.cache \
+    /var/lib/apt/lists/* \
+    /var/tmp/* \
+    /tmp/*
+
+# add local files
+COPY /root /
+
+# ports and volumes
+EXPOSE 3001
+
+VOLUME /config
