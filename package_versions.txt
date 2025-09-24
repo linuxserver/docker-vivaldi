@@ -1033,7 +1033,7 @@ typing-extensions                                                             4.
 tzdata                                                                        2025b-4+deb13u1                         deb                         
 udev                                                                          257.8-1~deb13u2                         deb                         
 util-linux                                                                    2.41-5                                  deb                         
-vivaldi-stable                                                                7.6.3797.55-1                           deb                         
+vivaldi-stable                                                                7.6.3797.56-1                           deb                         
 vulkan-tools                                                                  1.4.304.0+dfsg1-1                       deb                         
 watchdog                                                                      6.0.0                                   python                      
 websockets                                                                    15.0.1                                  python                      
