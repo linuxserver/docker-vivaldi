@@ -109,4 +109,5 @@ init_diagram: |
   "vivaldi:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "20.12.25:", desc: "Add Wayland init logic."}
   - {date: "06.09.25:", desc: "Initial release."}
