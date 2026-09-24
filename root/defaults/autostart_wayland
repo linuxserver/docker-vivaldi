@@ -1,2 +1,2 @@
 #!/bin/bash
-wrapped-vivaldi --enable-features=UseOzonePlatform --ozone-platform=wayland ${VIVALDI_CLI}
+wrapped-vivaldi ${VIVALDI_CLI}
