@@ -1174,7 +1174,7 @@ udev                                                                          25
 util-linux                                                                    2.41.5-0+deb13u1                        deb                         
 uvicorn                                                                       0.54.0                                  python                      
 uvloop                                                                        0.22.1                                  python                      
-vivaldi-stable                                                                8.2.4133.76-1                           deb                         
+vivaldi-stable                                                                8.2.4133.80-1                           deb                         
 vulkan-tools                                                                  1.4.304.0+dfsg1-1                       deb                         
 watchdog                                                                      6.0.0                                   python                      
 watchfiles                                                                    1.3.0                                   python                      
